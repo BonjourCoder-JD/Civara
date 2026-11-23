@@ -8,3 +8,19 @@ print("Civara Equity Dataset")
 
 for country in countries:
         print(f"{country['country']}: {country['score']}")
+
+total_score = 0
+
+for country in countries:
+        total_score += country['score']
+print(f"Total score: {total_score}")
+
+def calculate_average_score(countries):
+    if len(countries) == 0:
+        return 0
+    total_score = 0
+    for record in countries:
+        total_score += record['score']
+    return total_score / len(countries)
+
+print(f"Average score: {calculate_average_score(countries)}")
